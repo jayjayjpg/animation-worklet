@@ -3,15 +3,58 @@
   <head>
     <meta charset="UTF-8">
     <title>Animation Worklet 3</title>
+    <style>
+    .box {
+      width: 40%;
+      height: 550px;
+      padding: 20px;
+      border: 5px solid #444;
+      margin: 5px;
+      float: left;
+    }
+    .square {
+      background-color: #dd77dd;
+      width: 50px;
+      height: 50px;
+    }
+    .main {
+      overflow: auto;
+      height: 300px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .box-content {
+      height: 1600px;
+    }
+    </style>
   </head>
-  <body>
-    <section style="width: 40%; height: 550px; padding: 20px; border: 5px solid #444; margin: 5px; float: left;">
-      <div id="square" style="background-color: #dd77dd; width: 50px; height: 50px"></div>
-    </section>
-    <section style="width: 40%; height: 550px; padding: 20px; border: 5px solid #444; margin: 5px; float: left;">
-      <div id="squarer" style="background-color: #77dd77; width: 50px; height: 50px"></div>
-    </section>
+  <body style="overflow: scroll;">
+    <div>
+      <section class="box">
+        <div class="square" id="square1"></div>
+        <div class="square" id="square2" style="background-color: #123456;"></div>
+        <div class="square" id="square3" style="background-color: #9912bb;"></div>
+        <div class="square" id="square4" style="background-color: #aaaaff;"></div>
+        <div class="square" id="square5" style="background-color: #44009b;"></div>
+        <div class="square" id="square6" style="background-color: #aadd93;"></div>
+      </section>
+      <section class="box">
+        <div class="square" id="squarer1" style="background-color: #77dd77;"></div>
+        <div class="square" id="squarer2" style="background-color: #123456;"></div>
+        <div class="square" id="squarer3" style="background-color: #9912bb;"></div>
+        <div class="square" id="squarer4" style="background-color: #aaaaff;"></div>
+        <div class="square" id="squarer5" style="background-color: #44009b;"></div>
+        <div class="square" id="squarer6" style="background-color: #aadd93;"></div>
+
+      </section>
+      <section class="main box">
+        <div class="box-content" style="background-color: rgba(30,30,30,0.5);">
+
+        </div>
+      </section>
+    </div>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations-next.min.js"></script> -->
     <script src="animation.js?v=6.5"></script>
+    <script src="computing.js?v=6.5"></script>
   </body>
 </html>

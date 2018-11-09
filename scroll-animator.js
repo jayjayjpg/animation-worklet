@@ -1,7 +1,48 @@
 console.log("scroll aninmation 3");
+const iterations = 50;
+const multiplier = 100000000;
+
+function calculatePrimes(iterations, multiplier) {
+  var primes = [];
+  for (var i = 0; i < iterations; i++) {
+    var candidate = i * (multiplier * Math.random());
+    var isPrime = true;
+    for (var c = 2; c <= Math.sqrt(candidate); ++c) {
+      if (candidate % c === 0) {
+          // not prime
+          isPrime = false;
+          break;
+       }
+    }
+    if (isPrime) {
+      primes.push(candidate);
+    }
+  }
+  return primes;
+}
+
+function doPointlessComputationsWithBlocking() {
+  var primes = calculatePrimes(iterations, multiplier);
+  console.log("primed animated");
+}
+
 registerAnimator('scrollanimation', class {
-  animate(currentTime, effect) {
+  /* animate(currentTime, effect) {
     effect.localTime = currentTime;
+  } */
+
+  constructor(options = {}, state = {}) {
+    this.direction = state.direction || (Math.random() > 0.5 ? 1 : -1);
+    // this.documentTimeline = options.documentTimeline;
+  }
+  animate(currentTime, effect) {
+    // Some math to make sure that `localTime` is always > 0.
+    // effect.localTime = 2000 + this.direction * (currentTime % 2000);
+    // effect.localTime = currentTime * this.documentTimeline.currentTime;
+    // doPointlessComputationsWithBlocking();
+  }
+  destroy() {
+    console.log("destroyed");
   }
 });
 
